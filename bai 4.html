@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính tổng mảng</title>
+</head>
+<body>
+  <h2>Nhập các số cách nhau bởi dấu phẩy:</h2>
+  
+  <input type="text" id="arrayInput" placeholder="Ví dụ: 1, 2, 3, 4">
+  <button onclick="tinhTong()">Tính tổng</button>
+
+  <h3 id="ketQua"></h3>
+
+  <script>
+    function tinhTong() {
+     
+      let input = document.getElementById("arrayInput").value;
+      let arr = input.split(",").map(x => Number(x.trim()));
+
+      let tong = arr.reduce((acc, val) => acc + val, 0);
+
+      document.getElementById("ketQua").innerText = "Tổng là: " + tong;
+    }
+  </script>
+</body>
+</html>

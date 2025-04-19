@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zoom ảnh</title>
+  <style>
+    img {
+      transition: transform 0.3s ease;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Ảnh thu phóng</h3>
+  <img id="anh" src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/491832504_122150387384463545_8796342081763778444_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeHbHiVNrR2vYrqpWG957Qzt1dekDhMT3f7V16QOExPd_r7fpW4OFUZf0x7BHR0VaEiaUxJCXaiKjXF6Nz7rc6zU&_nc_ohc=byE_tn4ilzkQ7kNvwHg8PC-&_nc_oc=AdkY7mJJzVn8bDLX9R3ckd20SLFF7jHhMqJzHNxvC5_fEBwdizX2O8MzLYJ9KS_mXko&_nc_zt=23&_nc_ht=scontent.fhan5-8.fna&_nc_gid=Kc5n_RYXETyX4C2_akog8g&oh=00_AfFgPEQX_dihch2WqDxiS4aiw2fQbDRZn-zohG7jdoBjQw&oe=68051885" alt="Demo">
+
+  <br><br>
+  <button onclick="zoomIn()">Zoom In</button>
+  <button onclick="zoomOut()">Zoom Out</button>
+
+  <script>
+    let scale = 1;
+
+    function zoomIn() {
+      scale += 0.1;
+      document.getElementById("anh").style.transform = `scale(${scale})`;
+    }
+
+    function zoomOut() {
+      if (scale > 0.2) {
+        scale -= 0.1;
+        document.getElementById("anh").style.transform = `scale(${scale})`;
+      }
+    }
+  </script>
+</body>
+</html>
